@@ -1,3 +1,4 @@
+import discord
 from keep_alive import keep_alive
 from asyncio import sleep
 from discord import Intents
@@ -7,6 +8,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from discord import Embed, File
 from discord.ext.commands import Bot as BotBase
+from discord.ext.commands import Context
 from discord.ext.commands import CommandNotFound
 from ..db import db
 
@@ -14,7 +16,7 @@ PREFIX = '&'
 
 OWNER_IDS = [485054727755792410]
 
-COGS = ["fun"]
+COGS = ["fun", "reactions", "ayuda"]
 
 class Ready(object):
   def __init__(self):
@@ -67,8 +69,15 @@ class Bot(BotBase):
       print('running bot...')
       super().run(self.TOKEN, reconnect=True)
 
-  async def print_message(self):
-    await self.pruebot.send("Este es un mensaje programado.")
+  async def process_commands(self, message):
+    ctx = await self.get_context(message, cls=Context)
+
+    if ctx.command is not None and ctx.guild is not None:
+      if self.ready:
+        await self.invoke(ctx)
+    
+      else:
+        await ctx.send("Aún no estoy listo para recibir comandos, por favor espera unos segundos.")
 
   async def on_connect(self):
     print('bot connected')
@@ -89,7 +98,7 @@ class Bot(BotBase):
       pass
 
     elif hasattr(exc, "original"):
-      raise exc.original
+      raise exc
 
     else:
       raise exc
@@ -97,17 +106,18 @@ class Bot(BotBase):
   async def on_ready(self):
     if not self.ready:
       
-      self.guild = self.get_guild(716064319938494545)
-      self.pruebot = self.get_channel(800131110989463592)
-      self.scheduler.add_job(self.print_message, CronTrigger(day_of_week=6))
-      self.scheduler.start()
+      # self.guild = self.get_guild(716064319938494545)
+      # self.pruebot = self.get_channel(800131110989463592)
+      # channel = self.pruebot
+      # # self.scheduler.add_job(self.print_message, CronTrigger(day_of_week=6))
+      # # self.scheduler.start()
 
-      while not self.cogs_ready.all_ready():
-        await sleep(0.5)
+      # while not self.cogs_ready.all_ready():
+      #   await sleep(0.5)
 
-      await self.pruebot.send("Now online!")
-      self.ready = True
-      print("bot ready")
+      # await self.pruebot.send("Now online!")
+      # self.ready = True
+      # print("bot ready")
 
       # embed = Embed(title="Comunismo y anticomunismo en Colombia", colour=0xFF0000, timestamp=datetime.utcnow())
 
@@ -128,7 +138,9 @@ class Bot(BotBase):
       print("bot reconnected")
 
   async def on_message(self, message):
-    pass
+      
+    if not message.author.bot:
+      await self.process_commands(message)
 
 keep_alive()
 
