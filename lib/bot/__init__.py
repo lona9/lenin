@@ -16,7 +16,7 @@ PREFIX = '&'
 
 OWNER_IDS = [485054727755792410]
 
-COGS = ["utility", "reactions", "ayuda", "meta", "random", "triggers"]
+COGS = ["utility", "reactions", "ayuda", "meta", "random", "triggers", "log"]
 
 class Ready(object):
   def __init__(self):
