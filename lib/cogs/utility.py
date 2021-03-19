@@ -41,7 +41,7 @@ class Utility(Cog):
     tz_MX = pendulum.timezone('America/Mexico_City')
     datetime_MX = datetime.now(tz_MX)
 
-    hora = (":flag_mx: (CDMX) **(GMT -6): **", datetime_MX.strftime("%H:%M:%S"), "\n", ":flag_pe: :flag_ec: :flag_co: **(GMT -5): **", datetime_PE.strftime("%H:%M:%S"), "\n", ":flag_bo: :flag_py: :flag_ve: **(GMT -4): **", datetime_BO.strftime("%H:%M:%S"), "\n", ":flag_ar: :flag_cl: :flag_br: :flag_uy: **(GMT -3) : **", datetime_CL.strftime("%H:%M:%S"), "\n", ":flag_kr: :flag_jp: **(GMT +9): **", datetime_JP.strftime("%H:%M:%S"))
+    hora = (":flag_mx: (CDMX) **(GMT -6): **", datetime_MX.strftime("%H:%M:%S"), "\n", ":flag_pe: :flag_ec: :flag_co: **(GMT -5): **", datetime_PE.strftime("%H:%M:%S"), "\n", ":flag_bo: :flag_ve: **(GMT -4): **", datetime_BO.strftime("%H:%M:%S"), "\n", ":flag_ar: :flag_cl: :flag_br: :flag_uy: :flag_py: **(GMT -3) : **", datetime_CL.strftime("%H:%M:%S"), "\n", ":flag_kr: :flag_jp: **(GMT +9): **", datetime_JP.strftime("%H:%M:%S"))
 
     hora = "".join(hora)
 
