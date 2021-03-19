@@ -1,5 +1,6 @@
 from discord.ext.commands import Cog
 from discord.utils import get
+from discord import Embed
 
 class Reactions(Cog):
   def __init__(self, bot):
@@ -52,18 +53,28 @@ class Reactions(Cog):
 
     if payload.channel_id == 801820643300474940:
       if payload.emoji.name == '🗿':
-        with open('/home/runner/lenin/ayuda/ayuda2.txt') as f:
-          ayuda = f.read()
-          await user.send(ayuda)
-          await lona.send('{} necesita ayuda con el bot'.format(user))
+        embed = Embed(colour=0xFF0000)
+
+        fields = [("¡Hola!", "Soy el bot de **Orbitburó en Español** y ¡estoy aquí para guiarte! <:chuu:716783609763069962>", False), ("Vi que tenías dudas sobre cómo usarme, aquí te dejo algunos comandos que te podrían servir. Para utilizar cualquier comando, solo debes escribir la palabra (con & adelante siempre).\nIntenta con los siguientes comandos para ver más información:","\u200B\n**&ayuda**: ¡estás aquí!\n**&comandos**: lista de comandos disponibles para interactuar conmigo\n**&canales**: lista de todos los canales y sus descripciones\n\u200B", False), ("¿Dónde usarme?", "Puedes usarme en todos los canales abiertos, excepto en los canales específicos para otros bots, o en esta misma conversación.", False)]
+
+        for name, value, inline in fields:
+          embed.add_field(name=name, value=value, inline=inline)
+        
+        embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+
+        embed.set_footer(text="Si presento problemas o necesitas más ayuda, menciona o envía un mensaje a @lona")
+
+        await user.send(embed=embed)
+
+        await lona.send('{} necesita ayuda con el bot'.format(user))
           
     if payload.channel_id == 801276868027482164:
       if payload.emoji.name =='🛎️':
         await lona.send('{} quiere recibir notificaciones'.format(user))
-        f = open('/home/runner/lenin/roles/notificaciones-nombre.txt', 'a')
+        f = open('/home/runner/leninv2/data/textfiles/notificaciones-nombre.txt', 'a')
         f.write(", '<@{}>'".format(user, ', '))
         f.close()
-        f = open('/home/runner/lenin/roles/notificaciones-id.txt', 'a')
+        f = open('/home/runner/leninv2/data/textfiles/notificaciones-id.txt', 'a')
         newuser = ', ' + str(user.id)
         f.write(newuser)
         f.close()

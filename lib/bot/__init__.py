@@ -16,7 +16,7 @@ PREFIX = '&'
 
 OWNER_IDS = [485054727755792410]
 
-COGS = ["fun", "reactions", "ayuda"]
+COGS = ["fun", "reactions", "ayuda", "meta"]
 
 class Ready(object):
   def __init__(self):
@@ -72,7 +72,7 @@ class Bot(BotBase):
   async def process_commands(self, message):
     ctx = await self.get_context(message, cls=Context)
 
-    if ctx.command is not None and ctx.guild is not None:
+    if ctx.command is not None:
       if self.ready:
         await self.invoke(ctx)
     
@@ -107,32 +107,15 @@ class Bot(BotBase):
     if not self.ready:
       
       # self.guild = self.get_guild(716064319938494545)
-      # self.pruebot = self.get_channel(800131110989463592)
-      # channel = self.pruebot
-      # # self.scheduler.add_job(self.print_message, CronTrigger(day_of_week=6))
-      # # self.scheduler.start()
+      self.pruebot = self.get_channel(800131110989463592)
+      channel = self.pruebot
 
-      # while not self.cogs_ready.all_ready():
-      #   await sleep(0.5)
+      await self.pruebot.send("Estoy listo, estoy listo, estoy listo, estoy listo!")
+      self.ready = True
+      print("bot ready")
 
-      # await self.pruebot.send("Now online!")
-      # self.ready = True
-      # print("bot ready")
-
-      # embed = Embed(title="Comunismo y anticomunismo en Colombia", colour=0xFF0000, timestamp=datetime.utcnow())
-
-      # fields = [("Sesión", "4", True),
-      # ("Ciclo", "Tercer ciclo", True),
-      # ("Fecha", "13 de marzo", True),
-      # ("Texto", "'Comunismo y anticomunismo en Colombia en los inicios de la guerra fría'", False),
-      # ("Autor", "Luis Trejos Rosero", False)]
-
-      # for name, value, inline in fields:
-      #   embed.add_field(name=name, value=value, inline=inline)
-      # embed.set_author(name="lona", icon_url=self.guild.icon_url)
-      # embed.set_footer(text="Drive: https://drive.google.com/drive/folders/1z7i5z0MvfpJbRQMiY15LmqGshC3zQwDy?usp=sharing")
-
-      # await channel.send(embed=embed)
+      meta = self.get_cog("Meta")
+      await meta.set()
 
     else:
       print("bot reconnected")
