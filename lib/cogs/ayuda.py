@@ -8,8 +8,7 @@ class Ayuda(Cog):
 
   @command(name="ayuda", aliases=["info"])
   async def ayuda(self, ctx):
-
-    # self.guild = self.get_guild(716064319938494545)
+    
     embed = Embed(colour=0xFF0000)
 
     fields = [("¡Hola!", "Soy el bot de **Orbitburó en Español** y ¡estoy aquí para guiarte! <:chuu:716783609763069962>", False),
@@ -91,12 +90,12 @@ class Ayuda(Cog):
   @command(name="drive")
   async def drive(self, ctx):
     embed = Embed(title="Link del Drive", colour=0xFF0000)
-    fields =[("¿Buscas para la carpeta de Drive? ¡Acá está!", "https://drive.google.com/drive/folders/1o_xuNEuH_xNnO6LWFWXJ8XqlS2TNQ6Jy?usp=sharing", False)]
+    fields =[("¿Buscas el link para la carpeta de Drive? ¡Acá está!", "https://drive.google.com/drive/folders/1o_xuNEuH_xNnO6LWFWXJ8XqlS2TNQ6Jy?usp=sharing", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
 
-    embed.set_footer(text="Si no estás segure de dónde está lo que buscas, revisa <#765349189692817408> para ver el detalle de las actividades realizadas.")
+    embed.set_footer(text="Si no estás segure de dónde está lo que buscas, revisa #calendario para ver el detalle de las actividades realizadas.")
     embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
 
     await ctx.channel.send(embed=embed)

@@ -7,9 +7,7 @@ class Meta(Cog):
   def __init__(self, bot):
     self.bot = bot
 
-    self.message = "Listening BAJO CONSTRUCCIÓN, NO USAR"
-
-    bot.scheduler.add_job(self.set, CronTrigger(second=0))
+    self.message = "Listening Red Velvet - Blue Lemonade"
 
   async def set(self):
     _type, _name = self.message.split(" ", maxsplit=1)
