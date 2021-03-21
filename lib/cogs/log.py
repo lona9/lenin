@@ -16,18 +16,18 @@ class Log(Cog):
       self.bot.cogs_ready.ready_up("log")
 
 
-  @Cog.listener()
-  async def on_user_update(self, before, after):
-    tz_CL = pendulum.timezone('America/Santiago')
-    time_now = datetime.now(tz_CL)    
+  # @Cog.listener()
+  # async def on_user_update(self, before, after):
+  #   tz_CL = pendulum.timezone('America/Santiago')
+  #   time_now = datetime.now(tz_CL)    
 
-    if before.avatar_url != after.avatar_url:
-      embed = Embed(title="Member update", description="Avatar change", timestamp=time_now)
+  #   if before.avatar_url != after.avatar_url:
+  #     embed = Embed(title="Member update", description= f"Avatar change: {before.display_name}", timestamp=time_now)
 
-      embed.set_thumbnail(url=before.avatar_url)
-      embed.set_image(url=after.avatar_url)
+  #     embed.set_thumbnail(url=before.avatar_url)
+  #     embed.set_image(url=after.avatar_url)
 
-      await self.log_channel.send(embed=embed) 
+  #     await self.log_channel.send(embed=embed) 
 
   @Cog.listener()
   async def on_member_update(self, before, after):
