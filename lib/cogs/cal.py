@@ -103,7 +103,7 @@ class Cal(Cog):
     fields15 = [("Sesión", "6", True),
                 ("Ciclo", "Segundo ciclo", True),
                 ("Fecha", "19 de diciembre de 2020", True),
-                ("Texto", "Capítulos 25 al 31 de *Marxismo-leninismo-maoísmo: Curso básico*", False),
+                ("Texto", "Revolución china - Capítulos 25 al 31 de *Marxismo-leninismo-maoísmo: Curso básico*", False),
                 ("Carpeta de Drive", "https://drive.google.com/drive/folders/1fRMV5aggpwD1Xty2QeeT0fIh8B9_AW1T?usp=sharing", False)]
 
     fields16 = [("Sesión", "7", True),
@@ -168,7 +168,7 @@ class Cal(Cog):
     embed19 = make_embed(fields19)
     embed20 = make_embed(fields20)
 
-    embeds = [embed12, embed13, embed14, embed15, embed16, embed17, embed18, embed19, embed20]
+    embeds = [embed15, embed16, embed17, embed18, embed19, embed20]
 
     for embed in embeds:
       await ctx.send(embed=embed)

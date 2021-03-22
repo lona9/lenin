@@ -175,27 +175,26 @@ class Buscar(Cog):
       embed19 = make_embed(fields19)
       embed20 = make_embed(fields20)
 
-      actividades = {embed1: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marxismo leninismo maoísmo", "marx", "materialismo"], 
-      embed2: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marx", "materialismo", "lenin"], 
-      embed3: ["manifiesto comunista", "marx", "engels", "manifiesto", "burgueses", "proletarios", "marxismo"],
-      embed4: ["chicago", "chicago boys", "documental", "chile", "dictadura", "dictadura militar", "golpe", "golpe de estado", "latinoamerica", "latinoamérica", "latam"], 
-      embed5: ["china", "maoismo"],
+      actividades = {embed1: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marxismo leninismo maoísmo", "marx", "materialismo", "introduccion", "introducción"], 
+      embed2: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marx", "materialismo", "lenin", "introduccion", "introducción"], 
+      embed3: ["manifiesto comunista", "marx", "engels", "manifiesto", "burgueses", "proletarios", "marxismo", "comunismo"],
+      embed4: ["chicago", "chicago boys", "documental", "chile", "dictadura", "dictadura militar", "golpe", "golpe de estado", "latinoamerica", "latinoamérica", "latam", "pinochet"],
+      embed5: ["china", "maoismo", "mao", "maoísmo"],
       embed6: ["federici", "silvia federici", "feminismo"],
       embed7: ["la sociedad del cansancio", "sociedad del cansancio", "byungchul han", "byungchul", "byung-chul", "byung-chul han"], 
       embed8: ["batalla de chile", "poder popular", "la batalla de chile", "chile", "documental", "latinoamerica", "latinoamérica", "latam"],
-      embed9: ["batalla de chile", "golpe de estado", "el golpe de estado", "golpe", "dictadura", "la batalla de chile", "chile", "documental", "latinoamerica", "latinoamérica", "latam"],
+      embed9: ["batalla de chile", "golpe de estado", "el golpe de estado", "golpe", "dictadura", "la batalla de chile", "chile", "documental", "latinoamerica", "latinoamérica", "latam", "pinochet"],
       embed10: ["filosofía", "filosofia", "filosofia politica", "filosofía política", "stalin", "materialismo", "marxismo", "marx", "materialismo dialéctico", "materialismo histórico"], 
       embed11: ["economía", "economia", "economia politica", "economía política", "harnecker", "marta harnecker"],
       embed12: ["revolución", "rusia", "revolución rusa", "revolucion", "revolucion rusa", "lenin", "stalin", "trosky", "trostky"],
       embed13: ["lenin", "leninismo", "enfermedad infantil", "izquierdismo"], 
-      embed14: ["anuradha", "anuradha ghandy", "ghandy", "feminismo", "feminismo liberal", "radfem", "feminismo radical"],
+      embed14: ["anuradha", "anuradha ghandy", "ghandy", "feminismo", "feminismo liberal", "radfem", "feminismo radical", "feminismo cultural", "feminismo anar"],
       embed15: ["curso básico", "maoísmo", "maoismo", "mao", "china", "revolución", "revolucion", "revolucion china", "revolución china"],
       embed16: ["corea", "corea del sur", "corea del norte", "norcorea", "surcorea", "kim jongun", "guerra de corea", "guerra fría", "documental", "pyongyang"], 
       embed17: ["mapuche", "argentina", "4 lonkos", "lonkos", "latinoamerica", "latinoamérica", "latam", "documental", "lonko"], 
       embed18: ["mariategui", "mariátegui", "problema del indio", "problema de la tierra", "el problema del indio", "el problema de la tierra", "perú", "peru", "peruano", "latinoamerica", "latinoamérica", "latam"],
       embed19: ["cuba", "mujeres", "feminismo", "revolucion cubana", "revolución cubana", "mujeres en revolución", "mujeres en revolucion", "documental", "latinoamerica", "latinoamérica", "latam"], 
-      embed20: ["colombia", "latinoamerica", "latinoamérica", "latam", "anticomunismo", "comunismo", "guerrilla", "guerra fría"]  
-      }
+      embed20: ["colombia", "latinoamerica", "latinoamérica", "latam", "anticomunismo", "comunismo", "guerrilla", "guerra fría"]}
       
       counter = 0
 
