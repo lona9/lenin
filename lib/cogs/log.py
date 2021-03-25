@@ -47,7 +47,7 @@ class Log(Cog):
       await self.log_channel.send(embed=embed)   
 
     if before.roles != after.roles:
-      embed = Embed(title="Member update", description="Role change", timestamp=time_now)
+      embed = Embed(title="Member update", description= f"Role change: user **{after.display_name}#{after.discriminator}**", timestamp=time_now)
       
       fields = [("Before", ", ".join([r.mention for r in before.roles]), False),
               ("After", ", ".join([r.mention for r in after.roles]), False)]

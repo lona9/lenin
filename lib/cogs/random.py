@@ -60,6 +60,20 @@ class Random(Cog):
       else:
           await ctx.channel.send(random.choice(opinion))
 
+  @command(name="nezuko")
+  async def nezuko(self, ctx):
+    personas = ["fullsun", "dani", "flop"]
+    test = ["opción 1", "opción 2", "opción 3"]
+
+    await ctx.send("Nezuko Kamado va para...")
+    await ctx.send("...")
+    await ctx.send("....")
+    await ctx.send(".....")
+    await ctx.send("......")
+    await ctx.send(".......")
+    await ctx.send(f"{random.choice(personas)}!!!")
+
+
   @Cog.listener()
   async def on_ready(self):
     if not self.bot.ready:
