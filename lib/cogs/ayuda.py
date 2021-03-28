@@ -60,8 +60,11 @@ class Ayuda(Cog):
     
     embed = Embed(title="Siguiente actividad", colour=0xFF0000)
 
-    fields = [("Sesión", "5", True), ("Ciclo", "Tercer ciclo", True), ("Fecha", "Por definir", True), 
-    ("Texto", "Por definir", False)]
+    fields = [("Sesión", "5", True),
+                ("Ciclo", "Tercer ciclo", True),
+                ("Fecha", "3 de abril de 2021", True),
+                ("Texto", "Auge y caída de Sendero Luminoso", False),
+                ("Autor", "Fabiola Escárgaza", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)

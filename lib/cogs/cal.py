@@ -140,6 +140,12 @@ class Cal(Cog):
                 ("Autor", "Luis Trejos Rosero", False),
                 ("Carpeta de Drive", "https://drive.google.com/drive/folders/1z7i5z0MvfpJbRQMiY15LmqGshC3zQwDy?usp=sharing", False)]     
 
+    fields21 = [("Sesión", "5", True),
+                ("Ciclo", "Tercer ciclo", True),
+                ("Fecha", "3 de abril de 2021", True),
+                ("Texto", "Auge y caída de Sendero Luminoso", False),
+                ("Autor", "Fabiola Escárgaza", False)]     
+
     def make_embed(x):
       embed = Embed(colour=0xFF0000)
       for name, value, inline in x:
