@@ -5,6 +5,7 @@ from random import choice, randint
 import pendulum
 import datetime
 from datetime import datetime
+from discord.utils import get
 
 class Utility(Cog):
   def __init__(self, bot):
@@ -54,6 +55,13 @@ class Utility(Cog):
     embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
 
     await ctx.channel.send(embed=embed)
+
+  @Cog.listener()
+  async def on_member_join(self, member):
+
+    sinrol = get(member.guild.roles, name="sin rol")
+
+    await member.add_roles(sinrol)
   
   @Cog.listener()
   async def on_ready(self):

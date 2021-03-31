@@ -17,7 +17,7 @@ class Reactions(Cog):
 
     if user == self.bot:
       return
-
+  
     menor = get(user.guild.roles, name="menor")
     mayor = get(user.guild.roles, name="mayor")
     el = get(user.guild.roles, name="él")
