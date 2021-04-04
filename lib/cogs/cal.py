@@ -144,7 +144,8 @@ class Cal(Cog):
                 ("Ciclo", "Tercer ciclo", True),
                 ("Fecha", "3 de abril de 2021", True),
                 ("Texto", "Auge y caída de Sendero Luminoso", False),
-                ("Autor", "Fabiola Escárgaza", False)]     
+                ("Autor", "Fabiola Escárgaza", False),
+                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1kG5ZSjSfPj5NUxEPsJ0MzwtLpIoanXmv?usp=sharing", False)]     
 
     def make_embed(x):
       embed = Embed(colour=0xFF0000)
@@ -172,9 +173,9 @@ class Cal(Cog):
     embed17 = make_embed(fields17)
     embed18 = make_embed(fields18)
     embed19 = make_embed(fields19)
-    embed20 = make_embed(fields20)
+    embed21 = make_embed(fields21)
 
-    embeds = [embed15, embed16, embed17, embed18, embed19, embed20]
+    embeds = [embed21]
 
     for embed in embeds:
       await ctx.send(embed=embed)

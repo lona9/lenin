@@ -60,11 +60,7 @@ class Ayuda(Cog):
     
     embed = Embed(title="Siguiente actividad", colour=0xFF0000)
 
-    fields = [("Sesión", "5", True),
-                ("Ciclo", "Tercer ciclo", True),
-                ("Fecha", "3 de abril de 2021", True),
-                ("Texto", "Auge y caída de Sendero Luminoso", False),
-                ("Autor", "Fabiola Escárgaza", False)]
+    fields = [("\u200B", "La siguiente sesión aún no está programada", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
@@ -78,10 +74,12 @@ class Ayuda(Cog):
     
     embed = Embed(title="Última actividad", colour=0xFF0000)
 
-    fields = [("Sesión", "4", True), ("Ciclo", "Tercer ciclo", True), ("Fecha", "13 de marzo", True), 
-    ("Texto", "'Comunismo y anticomunismo en Colombia en los inicios de la guerra fría'", False),
-    ("Autor", "Luis Trejos Rosero", False),
-    ("Carpeta Drive", "https://drive.google.com/drive/folders/1z7i5z0MvfpJbRQMiY15LmqGshC3zQwDy?usp=sharing", False)]
+    fields = [("Sesión", "5", True),
+                ("Ciclo", "Tercer ciclo", True),
+                ("Fecha", "3 de abril de 2021", True),
+                ("Texto", "Auge y caída de Sendero Luminoso", False),
+                ("Autor", "Fabiola Escárgaza", False),
+                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1kG5ZSjSfPj5NUxEPsJ0MzwtLpIoanXmv?usp=sharing", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)

@@ -1,4 +1,5 @@
 from discord.ext.commands import Cog
+from discord.ext.commands import command
 from discord.utils import get
 from discord import Embed
 
@@ -10,6 +11,13 @@ class Reactions(Cog):
   async def on_ready(self):
     if not self.bot.ready:
       self.bot.cogs_ready.ready_up("reactions")
+
+  @command(name="pais")
+  async def pais(self, ctx):
+    paises = await ctx.channel.send("Para agregarte un rol de acuerdo a tu nacionalidad/país de residencia, haz click en la bandera del país que corresponda.")
+    banderas = ["🇦🇷", "🇧🇴", "🇧🇷", "🇨🇱", "🇨🇴", "🇪🇨", "🇺🇸", "🇲🇽", "🇵🇾", "🇵🇪", "🇻🇪"]
+    for i in banderas:
+      await paises.add_reaction(i)
 
   @Cog.listener()
   async def on_raw_reaction_add(self, payload):
@@ -24,6 +32,17 @@ class Reactions(Cog):
     ella = get(user.guild.roles, name="ella")
     elle = get(user.guild.roles, name="elle/ele")
     campanita = get(user.guild.roles, name="notificaciones")
+    argentina = get(user.guild.roles, name="argentina")
+    bolivia = get(user.guild.roles, name="bolivia")
+    brasil = get(user.guild.roles, name="brasil")
+    chile = get(user.guild.roles, name="chile")
+    colombia = get(user.guild.roles, name="colombia")
+    ecuador = get(user.guild.roles, name="ecuador")
+    estados_unidos = get(user.guild.roles, name="estados unidos")
+    mexico = get(user.guild.roles, name="méxico")
+    paraguay = get(user.guild.roles, name="paraguay")
+    peru = get(user.guild.roles, name="perú")
+    venezuela = get(user.guild.roles, name="venezuela")
 
     if payload.channel_id == 801276868027482164:
       if payload.emoji.name == '🐛':
@@ -48,6 +67,28 @@ class Reactions(Cog):
         await user.remove_roles(elle)
       elif payload.emoji.name =='🛎️':
         await user.add_roles(campanita)
+      elif payload.emoji.name == '🇦🇷':
+        await user.add_roles(argentina)
+      elif payload.emoji.name == '🇧🇴':
+        await user.add_roles(bolivia)
+      elif payload.emoji.name == '🇧🇷':
+        await user.add_roles(brasil)
+      elif payload.emoji.name == '🇨🇱':
+        await user.add_roles(chile)
+      elif payload.emoji.name == '🇨🇴':
+        await user.add_roles(colombia)
+      elif payload.emoji.name == '🇪🇨':
+        await user.add_roles(ecuador)
+      elif payload.emoji.name == '🇺🇸':
+        await user.add_roles(estados_unidos)
+      elif payload.emoji.name == '🇲🇽':
+        await user.add_roles(mexico)
+      elif payload.emoji.name == '🇵🇾':
+        await user.add_roles(paraguay)
+      elif payload.emoji.name == '🇵🇪':
+        await user.add_roles(peru)
+      elif payload.emoji.name == '🇻🇪':
+        await user.add_roles(venezuela)
 
     lona = await self.bot.fetch_user(485054727755792410)
 

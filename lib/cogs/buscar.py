@@ -145,7 +145,14 @@ class Buscar(Cog):
                   ("Fecha", "13 de marzo de 2021", True),
                   ("Texto", "Comunismo y anticomunismo en Colombia en los inicios de la guerra fría", False),
                   ("Autor", "Luis Trejos Rosero", False),
-                  ("Carpeta de Drive", "https://drive.google.com/drive/folders/1z7i5z0MvfpJbRQMiY15LmqGshC3zQwDy?usp=sharing", False)]     
+                  ("Carpeta de Drive", "https://drive.google.com/drive/folders/1z7i5z0MvfpJbRQMiY15LmqGshC3zQwDy?usp=sharing", False)]
+
+      fields21 = [("Sesión", "5", True),
+                ("Ciclo", "Tercer ciclo", True),
+                ("Fecha", "3 de abril de 2021", True),
+                ("Texto", "Auge y caída de Sendero Luminoso", False),
+                ("Autor", "Fabiola Escárgaza", False),
+                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1kG5ZSjSfPj5NUxEPsJ0MzwtLpIoanXmv?usp=sharing", False)]   
 
       def make_embed(x):
         embed = Embed(colour=0xFF0000)
@@ -174,6 +181,7 @@ class Buscar(Cog):
       embed18 = make_embed(fields18)
       embed19 = make_embed(fields19)
       embed20 = make_embed(fields20)
+      embed21 = make_embed(fields21)
 
       actividades = {embed1: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marxismo leninismo maoísmo", "marx", "materialismo", "introduccion", "introducción"], 
       embed2: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marx", "materialismo", "lenin", "introduccion", "introducción"], 
@@ -194,7 +202,8 @@ class Buscar(Cog):
       embed17: ["mapuche", "argentina", "4 lonkos", "lonkos", "latinoamerica", "latinoamérica", "latam", "documental", "lonko"], 
       embed18: ["mariategui", "mariátegui", "problema del indio", "problema de la tierra", "el problema del indio", "el problema de la tierra", "perú", "peru", "peruano", "latinoamerica", "latinoamérica", "latam"],
       embed19: ["cuba", "mujeres", "feminismo", "revolucion cubana", "revolución cubana", "mujeres en revolución", "mujeres en revolucion", "documental", "latinoamerica", "latinoamérica", "latam"], 
-      embed20: ["colombia", "latinoamerica", "latinoamérica", "latam", "anticomunismo", "comunismo", "guerrilla", "guerra fría"]}
+      embed20: ["colombia", "latinoamerica", "latinoamérica", "latam", "anticomunismo", "comunismo", "guerrilla", "guerra fría"],
+      embed21: ["perú", "peru", "sendero luminoso", "sendero", "latam", "latinoamérica", "latinoamerica", "guzmán"]}
       
       counter = 0
 
