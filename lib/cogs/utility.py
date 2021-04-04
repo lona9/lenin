@@ -27,8 +27,8 @@ class Utility(Cog):
   async def hora(self, ctx):
 
   # TIMEZONES
-    tz_CL = pendulum.timezone('America/Santiago')
-    datetime_CL = datetime.now(tz_CL)
+    tz_AR = pendulum.timezone('America/Argentina/Buenos_Aires')
+    datetime_AR = datetime.now(tz_AR)
 
     tz_PE = pendulum.timezone('America/Lima')
     datetime_PE = datetime.now(tz_PE)
@@ -42,7 +42,7 @@ class Utility(Cog):
     tz_MX = pendulum.timezone('America/Mexico_City')
     datetime_MX = datetime.now(tz_MX)
 
-    hora = (":flag_mx: (CDMX) **(GMT -6): **", datetime_MX.strftime("%H:%M:%S"), "\n", ":flag_pe: :flag_ec: :flag_co: **(GMT -5): **", datetime_PE.strftime("%H:%M:%S"), "\n", ":flag_bo: :flag_ve: **(GMT -4): **", datetime_BO.strftime("%H:%M:%S"), "\n", ":flag_ar: :flag_cl: :flag_br: :flag_uy: :flag_py: **(GMT -3) : **", datetime_CL.strftime("%H:%M:%S"), "\n", ":flag_kr: :flag_jp: **(GMT +9): **", datetime_JP.strftime("%H:%M:%S"))
+    hora = (":flag_pe: :flag_ec: :flag_co: :flag_mx: (CDMX) **(GMT -5): **", datetime_PE.strftime("%H:%M:%S"), "\n", ":flag_bo: :flag_ve: :flag_cl: :flag_py: **(GMT -4): **", datetime_BO.strftime("%H:%M:%S"), "\n", ":flag_ar:  :flag_br: :flag_uy: **(GMT -3) : **", datetime_AR.strftime("%H:%M:%S"), "\n", ":flag_kr: :flag_jp: **(GMT +9): **", datetime_JP.strftime("%H:%M:%S"))
 
     hora = "".join(hora)
 

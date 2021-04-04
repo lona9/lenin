@@ -11,7 +11,7 @@ class Notifications(Cog):
   @command(name="actividad", aliases=["act"])
   async def actividad(self, ctx):
     await ctx.message.delete()
-    await ctx.channel.send('Compañeres, les invitamos a seguir participando de nuestro tercer ciclo de formación en una nueva actividad, donde leeremos y analizaremos el texto **"Auge y caída de Sendero Luminoso"** el sábado 3 de abril a las 16:00 horas (GMT -3).\n<@&801508398662942790>\n¡Les esperamos!\n')
+    await ctx.channel.send('Compañeres, les recordamos que hoy tendremos una nueva actividad de nuestro ciclo de formación de Latinoamérica, donde leeremos y analizaremos el texto **"Auge y caída de Sendero Luminoso"** el sábado 3 de abril a las 16:00 horas (GMT -3).\n<@&801508398662942790>\n¡Les esperamos en unas horas!\n')
     await ctx.channel.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'afichesendero.png')))
 
 
@@ -22,7 +22,7 @@ class Notifications(Cog):
       users = f.read().split(', ')
       for i in users:
         user = await self.bot.fetch_user(i)
-        await user.send('Compañeres, les invitamos a seguir participando de nuestro tercer ciclo de formación en una nueva actividad, donde leeremos y analizaremos el texto **"Auge y caída de Sendero Luminoso"** el sábado 3 de abril a las 16:00 horas (GMT -3).\n¡Les esperamos!\n')
+        await user.send('Compañeres, les recordamos que hoy tendremos una nueva actividad, donde leeremos y analizaremos el texto **"Auge y caída de Sendero Luminoso"** el sábado 3 de abril a las 16:00 horas (GMT -3).\n¡Les esperamos en unas horas!\n')
         await user.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'afichesendero.png')))
   
   @Cog.listener()
