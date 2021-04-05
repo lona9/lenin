@@ -43,6 +43,7 @@ class Reactions(Cog):
     paraguay = get(user.guild.roles, name="paraguay")
     peru = get(user.guild.roles, name="perú")
     venezuela = get(user.guild.roles, name="venezuela")
+    spain = get(user.guild.roles, name="españa")
 
     if payload.channel_id == 801276868027482164:
       if payload.emoji.name == '🐛':
@@ -89,6 +90,8 @@ class Reactions(Cog):
         await user.add_roles(peru)
       elif payload.emoji.name == '🇻🇪':
         await user.add_roles(venezuela)
+      elif payload.emoji.name == '🇪🇸':
+        await user.add_roles(spain)
 
     lona = await self.bot.fetch_user(485054727755792410)
 
