@@ -93,7 +93,8 @@ class Reactions(Cog):
       elif payload.emoji.name == '🇪🇸':
         await user.add_roles(spain)
 
-    lona = await self.bot.fetch_user(485054727755792410)
+    self.leninlog = self.bot.get_channel(829158432925024287)
+    channel = self.leninlog
 
     if payload.channel_id == 801820643300474940:
       if payload.emoji.name == '🗿':
@@ -110,11 +111,11 @@ class Reactions(Cog):
 
         await user.send(embed=embed)
 
-        await lona.send('{} necesita ayuda con el bot'.format(user))
+        await self.leninlog.send('{} necesita ayuda con el bot'.format(user))
           
     if payload.channel_id == 801276868027482164:
       if payload.emoji.name =='🛎️':
-        await lona.send('{} quiere recibir notificaciones'.format(user))
+        await self.leninlog.send('{} quiere recibir notificaciones'.format(user))
         f = open('/home/runner/leninv2/data/textfiles/notificaciones-nombre.txt', 'a')
         f.write(", '<@{}>'".format(user, ', '))
         f.close()

@@ -10,7 +10,6 @@ from discord import Embed, File
 from discord.ext.commands import Bot as BotBase
 from discord.ext.commands import Context
 from discord.ext.commands import CommandNotFound
-from ..db import db
 
 PREFIX = '&'
 
@@ -41,8 +40,6 @@ class Bot(BotBase):
 
     intents = Intents.default()
     intents.members = True
-
-    db.autosave(self.scheduler)
 
     super().__init__(
       command_prefix=PREFIX, 
@@ -89,7 +86,7 @@ class Bot(BotBase):
     if err == "on_command_error":
       pass
 
-    await self.pruebot.send("Ocurrió un error.")
+    await self.leninlog.send("Ocurrió un error.")
 
     raise
 
@@ -107,10 +104,10 @@ class Bot(BotBase):
     if not self.ready:
       
       # self.guild = self.get_guild(716064319938494545)
-      self.pruebot = self.get_channel(800131110989463592)
-      channel = self.pruebot
+      self.leninlog = self.get_channel(829158432925024287)
+      channel = self.leninlog
 
-      await self.pruebot.send("Estoy listo, estoy listo, estoy listo, estoy listo!")
+      await self.leninlog.send("Estoy listo, estoy listo, estoy listo, estoy listo!")
       self.ready = True
       print("bot ready")
 

@@ -7,7 +7,7 @@ class Meta(Cog):
   def __init__(self, bot):
     self.bot = bot
 
-    self.message = "Listening Sunmi - Full Moon"
+    self.message = "Listening WENDY - Like Water"
 
   async def set(self):
     _type, _name = self.message.split(" ", maxsplit=1)

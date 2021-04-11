@@ -5,9 +5,12 @@ from discord import Embed
 class Ayuda(Cog):
   def __init__(self, bot):
     self.bot = bot
+    self.bot.remove_command("help")
 
-  @command(name="ayuda", aliases=["info"])
+  @command(name="ayuda", aliases=["info", "help"])
   async def ayuda(self, ctx):
+
+    self.ctx = ctx
     
     embed = Embed(colour=0xFF0000)
 
@@ -17,7 +20,7 @@ class Ayuda(Cog):
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
-    embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+    embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
     embed.set_footer(text="Si presento problemas o necesitas más ayuda, menciona o envía un mensaje a @lona")
 
     await ctx.channel.send(embed=embed)

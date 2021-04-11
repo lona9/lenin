@@ -1,6 +1,7 @@
 import discord
 from discord.ext.commands import Cog
 from discord.ext.commands import command
+from discord import Forbidden
 from discord import Embed
 import os
 
@@ -11,8 +12,8 @@ class Notifications(Cog):
   @command(name="actividad", aliases=["act"])
   async def actividad(self, ctx):
     await ctx.message.delete()
-    await ctx.channel.send('Compañeres, les recordamos que hoy tendremos una nueva actividad de nuestro ciclo de formación de Latinoamérica, donde leeremos y analizaremos el texto **"Auge y caída de Sendero Luminoso"** el sábado 3 de abril a las 16:00 horas (GMT -3).\n<@&801508398662942790>\n¡Les esperamos en unas horas!\n')
-    await ctx.channel.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'afichesendero.png')))
+    await ctx.channel.send('Recuerden que les compañeres del podcast Voces Andinas extienden la invitación a todo el server para **comentar los resultados electorales de Perú y Ecuador 2021** hoy domingo 11 de abril, a las 19 horas (Perú/Ecuador), 20 horas (Chile).\nLa transmisión se hará en paralelo por YouTube y en el server.\n¡Les esperamos en unas horas!\n<@&801508398662942790>')
+    await ctx.channel.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'orbitburovocesandinas.png')))
 
 
   #DM NOTIFICACIONES
@@ -22,8 +23,12 @@ class Notifications(Cog):
       users = f.read().split(', ')
       for i in users:
         user = await self.bot.fetch_user(i)
-        await user.send('Compañeres, les recordamos que hoy tendremos una nueva actividad, donde leeremos y analizaremos el texto **"Auge y caída de Sendero Luminoso"** el sábado 3 de abril a las 16:00 horas (GMT -3).\n¡Les esperamos en unas horas!\n')
-        await user.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'afichesendero.png')))
+        print(user.name)
+        try:
+          await user.send('text')
+        except Forbidden:
+          pass
+
   
   @Cog.listener()
   async def on_ready(self):
