@@ -1,5 +1,4 @@
 import discord
-from keep_alive import keep_alive
 from asyncio import sleep
 from discord import Intents
 from datetime import datetime
@@ -15,7 +14,7 @@ PREFIX = '&'
 
 OWNER_IDS = [485054727755792410]
 
-COGS = ["utility", "reactions", "ayuda", "meta", "random", "triggers", "log", "buscar", "cal", "notifications", "info"]
+COGS = ["utility", "reactions", "ayuda", "meta", "random", "triggers", "log", "buscar", "cal", "notifications", "info", "votaciones"]
 
 class Ready(object):
   def __init__(self):
@@ -122,7 +121,6 @@ class Bot(BotBase):
     if not message.author.bot:
       await self.process_commands(message)
 
-keep_alive()
 
 bot = Bot()
 

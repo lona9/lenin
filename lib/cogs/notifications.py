@@ -12,23 +12,26 @@ class Notifications(Cog):
   @command(name="actividad", aliases=["act"])
   async def actividad(self, ctx):
     await ctx.message.delete()
-    await ctx.channel.send('Recuerden que les compañeres del podcast Voces Andinas extienden la invitación a todo el server para **comentar los resultados electorales de Perú y Ecuador 2021** hoy domingo 11 de abril, a las 19 horas (Perú/Ecuador), 20 horas (Chile).\nLa transmisión se hará en paralelo por YouTube y en el server.\n¡Les esperamos en unas horas!\n<@&801508398662942790>')
-    await ctx.channel.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'orbitburovocesandinas.png')))
+    await ctx.channel.send('Concluida la votación, la película que veremos este viernes a las 20:00 horas (GMT -4, hora chilena) es **Ralph el Demoledor**. Les invitamos a todes a participar de esta actividad, donde tendremos un anuncio muy especial para todo el servidor!\n¡Les esperamos el viernes!\n<@&801508398662942790>')
+    await ctx.channel.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'ralph.png')))
 
 
   #DM NOTIFICACIONES
   @command()
   async def notificaciones(self, ctx):
-    with open('/home/runner/leninv2/data/textfiles/notificaciones-id.txt') as f:
-      users = f.read().split(', ')
-      for i in users:
-        user = await self.bot.fetch_user(i)
-        print(user.name)
+    guild = ctx.message.guild
+    for role in guild.roles:
+      if role.name == "notificaciones":
+        role_id = role
+        break
+
+    for member in guild.members:
+      if role_id in member.roles:
         try:
-          await user.send('text')
+          await member.send("Concluida la votación, la película que veremos este viernes a las 20:00 horas (GMT -4, hora chilena) es **Ralph el Demoledor**. Les invitamos a todes a participar de esta actividad, donde tendremos un anuncio muy especial para todo el servidor!\n¡Les esperamos el viernes!")
+          await member.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'ralph.png')))
         except Forbidden:
           pass
-
   
   @Cog.listener()
   async def on_ready(self):
