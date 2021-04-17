@@ -16,7 +16,8 @@ class Ayuda(Cog):
 
     fields = [("¡Hola!", "Soy el bot de **Orbitburó en Español** y ¡estoy aquí para guiarte! <:chuu:716783609763069962>", False),
       ("Escribe los siguientes comandos para pedir más información:","\u200B\n**&ayuda**: ¡estás aquí!\n**&comandos**: lista de comandos disponibles para interactuar conmigo\n**&canales**: lista de todos los canales y sus descripciones\n\u200B", False),
-      ("¿Dónde usarme?", "Puedes usarme en todos los canales abiertos, excepto en los canales específicos para otros bots: <#774806561465565194>, <#774730648774246431>, <#716081709296255077> y <#731919940533223514>", False)]
+      ("¿Dónde usarme?", "Puedes usarme en todos los canales abiertos, excepto en los canales específicos para otros bots: <#774806561465565194>, <#774730648774246431>, <#716081709296255077> y <#731919940533223514>\n\u200B", False),
+      ("Donación", "Si te gusta este bot, ¡considera comprarle un ko-fi a mi creadora!: https://ko-fi.com/lona9", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
@@ -49,7 +50,9 @@ class Ayuda(Cog):
     fields = [("<:haseul2:716798819739762728>", "¿No sabes dónde ir? Te recordamos para qué sirve cada canal en caso de que necesites ayuda:", False),
       ("**__Sección Importantes__**", "<#716068304162258954>: Canal con las reglas del servidor\n<#716076222517608499>: Canal para anuncios importantes. NO SILENCIAR\n<#765349189692817408>: Canal con el resumen de las actividades ya realizadas y por realizar\n<#801276868027482164>: Canal para modificar tus roles\n<#801820643300474940>: Canal para votaciones del servidor", False),
       ("**__Sección Política__**", "<#716081691684241493>: Canal para discusión política en general\n<#716081838908506172>: Canal para subir recursos audiovisuales\n<#723974654548770898>: Canal donde se eligen futuras actividades mediante votación o discusión\n<#716081744390127717>: Canal para llevar a cabo discusiones durante las actividades)", False),
-      ("**__Sección Off-topic__**", "<#775731002890518588>: Canal para hablar de cualquier tema\n<#775731090375311400>: Canal para hablar sobre juegos\n<#816493090449653760>: Canal para hablar sobre música\n<#716081709296255077>: Canal para utilizar el bot Chuu\n<#774806561465565194>: Canal para jugar EPIC RPG\n<#774730648774246431>: Canal para jugar Mudae\n<#731919940533223514>: Canal para comandos del reproductor de música", False)]
+      ("**__Sección Off-topic__**", "<#775731002890518588>: Canal para hablar de cualquier tema\n<#775731090375311400>: Canal para hablar sobre juegos\n<#816493090449653760>: Canal para hablar sobre música\n<#716081709296255077>: Canal para utilizar el bot Chuu\n<#774806561465565194>: Canal para jugar EPIC RPG\n<#774730648774246431>: Canal para jugar Mudae\n<#832686629906415626>: Canal para enviar comandos de Engels\n<#731919940533223514>: Canal para comandos del reproductor de música", False),
+      # ("**__Sección Idiomas__**", "<#832444793229541466>: Canal para aprender chino mandarín\n<#832444851227983872>: Canal para aprender coreano\n<#832444904998830090>: Canal para aprender portugués\n<#832444934992560159>: Canal para aprender inglés", False)
+      ]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
