@@ -12,6 +12,11 @@ class Reactions(Cog):
     if not self.bot.ready:
       self.bot.cogs_ready.ready_up("reactions")
 
+  @command()
+  async def claseschino(self, ctx):
+    chino = await ctx.channel.send("Reacciona abajo para agregarte el rol de **clases de chino** y recibir las notificaciones del canal <#832444793229541466>.")
+    await chino.add_reaction("🇨🇳")
+
   @command(name="pais")
   async def pais(self, ctx):
     paises = await ctx.channel.send("Para agregarte un rol de acuerdo a tu nacionalidad/país de residencia, haz click en la bandera del país que corresponda.")
@@ -44,6 +49,7 @@ class Reactions(Cog):
     peru = get(user.guild.roles, name="perú")
     venezuela = get(user.guild.roles, name="venezuela")
     spain = get(user.guild.roles, name="españa")
+    claseschino = get(user.guild.roles, name="clases de chino")
 
     if payload.channel_id == 801276868027482164:
       if payload.emoji.name == '🐛':
@@ -92,6 +98,8 @@ class Reactions(Cog):
         await user.add_roles(venezuela)
       elif payload.emoji.name == '🇪🇸':
         await user.add_roles(spain)
+      elif payload.emoji.name == '🇨🇳':
+        await user.add_roles(claseschino)
 
     self.leninlog = self.bot.get_channel(829158432925024287)
     channel = self.leninlog
