@@ -11,7 +11,7 @@ class Ayuda(Cog):
   async def ayuda(self, ctx):
 
     self.ctx = ctx
-    
+
     embed = Embed(colour=0xFF0000)
 
     fields = [("¡Hola!", "Soy el bot de **Orbitburó en Español** y ¡estoy aquí para guiarte! <:chuu:716783609763069962>", False),
@@ -29,22 +29,26 @@ class Ayuda(Cog):
   @command(name="comandos", aliases=["comando"])
   async def comandos(self, ctx):
 
+    self.ctx = ctx
+
     embed = Embed(title="Lista de comandos", colour=0xFF0000)
-    
+
     fields = [("\u200B", "Estos son los comandos que puedes utilizar y sus funciones:", False),
       ("**__Servidor__**","**&canales:** Resumen de los canales del servidor.\n**&buscar**: Busca actividades usando una palabra clave relacionada (ejemplo: &buscar marxismo)\n**&siguiente**: Detalles de la próxima actividad a realizar.\n**&ultima**: Detalles de la última actividad realizada.\n**&drive**: Link para la carpeta de Drive del servidor.\n**&playlist**: Link para la playlist en Spotify de Orbitburó en español.\n**&invitacion**: Envía un DM con un link de invitación al server que caduca en 24 horas.\n**&redes**: Links de las redes sociales del servidor.", False),
-      ("**__Al azar__**", "**&cita**: Citas de autores famosos al azar.\n**&dato**: Datos curiosos de izquierda al azar.\n**&bobesponja**: Citas de Bob Esponja al azar.\n**&kpop**: Canción de kpop al azar.\n**&cancion**: Canción en Spotify de la playlist de OrbitBuró en español al azar.\n**&recomendacion**: Texto de nuestra biblioteca en Drive al azar", False), 
+      ("**__Al azar__**", "**&cita**: Citas de autores famosos al azar.\n**&dato**: Datos curiosos de izquierda al azar.\n**&bobesponja**: Citas de Bob Esponja al azar.\n**&kpop**: Canción de kpop al azar.\n**&cancion**: Canción en Spotify de la playlist de OrbitBuró en español al azar.\n**&recomendacion**: Texto de nuestra biblioteca en Drive al azar", False),
       ("**__Misceláneos__**", "**&hora**: Hora actual en distintas zonas horarias.\n**&suerte**: Mira tu futuro haciendo una pregunta luego del comando (ejemplo: &suerte llegaremos al socialismo este año?)\n**&opinion**: Pregúntame tu opinión de alguien (ejemplo: &opinion vivi from loona)", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
-    embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+    embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
     embed.set_footer(text="Si presento problemas o necesitas más ayuda, menciona o envía un mensaje a @lona")
 
     await ctx.channel.send(embed=embed)
-  
+
   @command(name="canales", aliases=["canal"])
   async def canales(self, ctx):
+
+    self.ctx = ctx
 
     embed = Embed(title="Lista de canales", colour=0xFF0000)
     fields = [("<:haseul2:716798819739762728>", "¿No sabes dónde ir? Te recordamos para qué sirve cada canal en caso de que necesites ayuda:", False),
@@ -56,14 +60,16 @@ class Ayuda(Cog):
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
-    embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+    embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
     embed.set_footer(text="Si presento problemas o necesitas más ayuda, menciona o envía un mensaje a @lona")
 
     await ctx.channel.send(embed=embed)
 
   @command(name="siguiente", aliases=["proxima"])
   async def siguiente(self, ctx):
-    
+
+    self.ctx = ctx
+
     embed = Embed(title="Siguiente actividad", colour=0xFF0000)
 
     fields = [("\u200B", "La siguiente sesión aún no está programada", False)]
@@ -71,13 +77,15 @@ class Ayuda(Cog):
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
 
-    embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+    embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
 
     await ctx.channel.send(embed=embed)
 
   @command(name="ultima", aliases=["anterior"])
   async def ultima(self, ctx):
-    
+
+    self.ctx = ctx
+
     embed = Embed(title="Última actividad", colour=0xFF0000)
 
     fields = [("Sesión", "5", True),
@@ -90,12 +98,15 @@ class Ayuda(Cog):
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
 
-    embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+    embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
 
     await ctx.channel.send(embed=embed)
 
   @command(name="drive")
   async def drive(self, ctx):
+
+    self.ctx = ctx
+
     embed = Embed(title="Link del Drive", colour=0xFF0000)
     fields =[("¿Buscas el link para la carpeta de Drive? ¡Acá está!", "https://drive.google.com/drive/folders/1o_xuNEuH_xNnO6LWFWXJ8XqlS2TNQ6Jy?usp=sharing", False)]
 
@@ -103,25 +114,29 @@ class Ayuda(Cog):
       embed.add_field(name=name, value=value, inline=inline)
 
     embed.set_footer(text="Si no estás segure de dónde está lo que buscas, revisa #calendario para ver el detalle de las actividades realizadas.")
-    embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+    embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
 
     await ctx.channel.send(embed=embed)
 
   @command(name="playlist", aliases=["spotify"])
   async def playlist(self, ctx):
+
+    self.ctx = ctx
+
     embed = Embed(title="Playlist oficial de Orbitburó", colour=0xFF0000)
     fields =[("¿Buscas el link de la playlist de Spotify? ¡Acá está!", "https://open.spotify.com/playlist/3ZcCDnPcEucCnZWNe1Yjcq?si=0tIICg21QlGf-AwWlNrr4w", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
 
-    embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+    embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
 
     await ctx.channel.send(embed=embed)
 
 
   @command(name='invitacion', aliases=["invite"])
   async def invitacion(self, ctx, *argument):
+
     invitelink = await ctx.channel.create_invite(max_age=86400,unique=True)
 
     await ctx.author.send('¡Aquí está el link de invitación al servidor que pediste! Debes usarlo en las siguientes 24 horas antes de que expire. ')
@@ -130,13 +145,15 @@ class Ayuda(Cog):
   @command(name="redes", aliases=["rrss"])
   async def redes(self, ctx):
 
+    self.ctx = ctx
+
     embed = Embed(title="Redes sociales de Orbitburó", colour=0xFF0000)
     fields =[("Síguenos en nuestras redes sociales", "**Twitter**: https://www.twitter.com/OrbitburoES\n**Instagram:** https://www.instagram.com/OrbitburoES", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
 
-    embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+    embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
 
     await ctx.channel.send(embed=embed)
 

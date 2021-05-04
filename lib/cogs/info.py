@@ -13,7 +13,7 @@ class Info(Cog):
   @command(name="userinfo", aliases=["ui", "mi", "memberinfo"])
   async def userinfo(self, ctx, target: Optional[Member]):
     tz_CL = pendulum.timezone('America/Santiago')
-    time_now = datetime.now(tz_CL)    
+    time_now = datetime.now(tz_CL)
 
     target = target or ctx.author
 
@@ -37,7 +37,7 @@ class Info(Cog):
   @command(name="serverinfo", aliases=["si"])
   async def serverinfo(self, ctx):
     tz_CL = pendulum.timezone('America/Santiago')
-    time_now = datetime.now(tz_CL)    
+    time_now = datetime.now(tz_CL)
 
     embed = Embed(title = "Server information",
                   timestamp = time_now)
@@ -57,9 +57,7 @@ class Info(Cog):
               ("Voice channels", len(ctx.guild.voice_channels), True),
               ("Categories", len(ctx.guild.categories), True),
               ("Roles", len(ctx.guild.roles), True),
-              ("Invites", len(await ctx.guild.invites()), True),
-              ("\u200b", "\u200b", True),
-              ("\u200b", "\u200b", True)]
+              ("Invites", len(await ctx.guild.invites()), True)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
@@ -69,13 +67,13 @@ class Info(Cog):
   @command(name="status")
   async def status(self, ctx):
     tz_CL = pendulum.timezone('America/Santiago')
-    time_now = datetime.now(tz_CL)    
+    time_now = datetime.now(tz_CL)
 
     embed = Embed(title = "Member status information",
                   timestamp = time_now)
 
     embed.set_thumbnail(url=ctx.guild.icon_url)
-    
+
     statuses = [len(list(filter(lambda m: str(m.status) == "online", ctx.guild.members))),
 		len(list(filter(lambda m: str(m.status) == "idle", ctx.guild.members))),
     len(list(filter(lambda m: str(m.status) == "dnd", ctx.guild.members))),
@@ -89,7 +87,7 @@ class Info(Cog):
 
     await ctx.send(embed=embed)
 
-  
+
   @Cog.listener()
   async def on_ready(self):
     if not self.bot.ready:

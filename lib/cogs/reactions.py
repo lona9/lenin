@@ -6,7 +6,7 @@ from discord import Embed
 class Reactions(Cog):
   def __init__(self, bot):
     self.bot = bot
-  
+
   @Cog.listener()
   async def on_ready(self):
     if not self.bot.ready:
@@ -30,7 +30,7 @@ class Reactions(Cog):
 
     if user == self.bot:
       return
-  
+
     menor = get(user.guild.roles, name="menor")
     mayor = get(user.guild.roles, name="mayor")
     el = get(user.guild.roles, name="él")
@@ -112,7 +112,7 @@ class Reactions(Cog):
 
         for name, value, inline in fields:
           embed.add_field(name=name, value=value, inline=inline)
-        
+
         embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
 
         embed.set_footer(text="Si presento problemas o necesitas más ayuda, menciona o envía un mensaje a @lona")
@@ -120,17 +120,7 @@ class Reactions(Cog):
         await user.send(embed=embed)
 
         await self.leninlog.send('{} necesita ayuda con el bot'.format(user))
-          
-    if payload.channel_id == 801276868027482164:
-      if payload.emoji.name =='🛎️':
-        await self.leninlog.send('{} quiere recibir notificaciones'.format(user))
-        f = open('/home/runner/leninv2/data/textfiles/notificaciones-nombre.txt', 'a')
-        f.write(", '<@{}>'".format(user, ', '))
-        f.close()
-        f = open('/home/runner/leninv2/data/textfiles/notificaciones-id.txt', 'a')
-        newuser = ', ' + str(user.id)
-        f.write(newuser)
-        f.close()
+
 
 def setup(bot):
   bot.add_cog(Reactions(bot))

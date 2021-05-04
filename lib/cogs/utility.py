@@ -52,7 +52,7 @@ class Utility(Cog):
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
 
-    embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+    embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
 
     await ctx.channel.send(embed=embed)
 
@@ -62,7 +62,7 @@ class Utility(Cog):
     sinrol = get(member.guild.roles, name="sin rol")
 
     await member.add_roles(sinrol)
-  
+
   @Cog.listener()
   async def on_ready(self):
     if not self.bot.ready:

@@ -12,8 +12,7 @@ class Notifications(Cog):
   @command(name="actividad", aliases=["act"])
   async def actividad(self, ctx):
     await ctx.message.delete()
-    await ctx.channel.send('Concluida la votación, la película que veremos este viernes a las 20:00 horas (GMT -4, hora chilena) es **Ralph el Demoledor**. Les invitamos a todes a participar de esta actividad, donde tendremos un anuncio muy especial para todo el servidor!\n¡Les esperamos el viernes!\n<@&801508398662942790>')
-    await ctx.channel.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'ralph.png')))
+    await ctx.channel.send(text)
 
 
   #DM NOTIFICACIONES
@@ -28,11 +27,10 @@ class Notifications(Cog):
     for member in guild.members:
       if role_id in member.roles:
         try:
-          await member.send("Concluida la votación, la película que veremos este viernes a las 20:00 horas (GMT -4, hora chilena) es **Ralph el Demoledor**. Les invitamos a todes a participar de esta actividad, donde tendremos un anuncio muy especial para todo el servidor!\n¡Les esperamos el viernes!")
-          await member.send(file=discord.File(os.path.join("/home/runner/leninv2/data/img", 'ralph.png')))
+          await member.send(text)
         except Forbidden:
           pass
-  
+
   @Cog.listener()
   async def on_ready(self):
     if not self.bot.ready:
