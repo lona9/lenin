@@ -97,9 +97,9 @@ class Cal(Cog):
                 ("Fecha", "21 de noviembre de 2020", True),
                 ("Texto", "Tendencias filosóficas en el movimiento feminista", False),
                 ("Autora", "Anuradha Ghandy", False),
-                ("Link del texto", " https://www.marxists.org/espanol/ghandy/2006/tendencias-filosoficas-movfem.htm", False), 
+                ("Link del texto", " https://www.marxists.org/espanol/ghandy/2006/tendencias-filosoficas-movfem.htm", False),
                 ("Carpeta de Drive", "https://drive.google.com/drive/folders/1eRH_6fCKItYrx-d7QWvOSEtOyMZhU8x3?usp=sharing", False)]
-              
+
     fields15 = [("Sesión", "6", True),
                 ("Ciclo", "Segundo ciclo", True),
                 ("Fecha", "19 de diciembre de 2020", True),
@@ -138,14 +138,21 @@ class Cal(Cog):
                 ("Fecha", "13 de marzo de 2021", True),
                 ("Texto", "Comunismo y anticomunismo en Colombia en los inicios de la guerra fría", False),
                 ("Autor", "Luis Trejos Rosero", False),
-                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1z7i5z0MvfpJbRQMiY15LmqGshC3zQwDy?usp=sharing", False)]     
+                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1z7i5z0MvfpJbRQMiY15LmqGshC3zQwDy?usp=sharing", False)]
 
     fields21 = [("Sesión", "5", True),
                 ("Ciclo", "Tercer ciclo", True),
                 ("Fecha", "3 de abril de 2021", True),
                 ("Texto", "Auge y caída de Sendero Luminoso", False),
                 ("Autor", "Fabiola Escárgaza", False),
-                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1kG5ZSjSfPj5NUxEPsJ0MzwtLpIoanXmv?usp=sharing", False)]     
+                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1kG5ZSjSfPj5NUxEPsJ0MzwtLpIoanXmv?usp=sharing", False)]
+
+    fields22 = [("Sesión", "6", True),
+                    ("Ciclo", "Tercer ciclo", True),
+                    ("Fecha", "15 de mayo de 2021", True),
+                    ("Texto", "Historia del MIR: 'Si quieren guerra, guerra tendrán...'", False),
+                    ("Autor", "Cristián Pérez", False),
+                    ("Link del texto", "https://drive.google.com/file/d/1zsK72GjsqrcxK1ngJcm12QOYDqHyHj-3/view?usp=sharing", False)]
 
     def make_embed(x):
       embed = Embed(colour=0xFF0000)
@@ -174,8 +181,9 @@ class Cal(Cog):
     embed18 = make_embed(fields18)
     embed19 = make_embed(fields19)
     embed21 = make_embed(fields21)
+    ember22 = make_embed(fields22)
 
-    embeds = [embed21]
+    embeds = [embed22]
 
     for embed in embeds:
       await ctx.send(embed=embed)

@@ -72,7 +72,12 @@ class Ayuda(Cog):
 
     embed = Embed(title="Siguiente actividad", colour=0xFF0000)
 
-    fields = [("\u200B", "La siguiente sesión aún no está programada", False)]
+    fields = [("Sesión", "6", True),
+                ("Ciclo", "Tercer ciclo", True),
+                ("Fecha", "15 de mayo de 2021", True),
+                ("Texto", "Historia del MIR: 'Si quieren guerra, guerra tendrán...'", False),
+                ("Autor", "Cristián Pérez", False),
+                ("Link del texto", "https://drive.google.com/file/d/1zsK72GjsqrcxK1ngJcm12QOYDqHyHj-3/view?usp=sharing", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
