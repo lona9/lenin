@@ -26,6 +26,8 @@ class Utility(Cog):
   @command(name="hora", aliases=["reloj", "clock"])
   async def hora(self, ctx):
 
+    self.ctx = ctx
+
   # TIMEZONES
     tz_AR = pendulum.timezone('America/Argentina/Buenos_Aires')
     datetime_AR = datetime.now(tz_AR)

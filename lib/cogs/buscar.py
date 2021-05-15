@@ -8,13 +8,15 @@ class Buscar(Cog):
 
   @command(name="buscar")
   async def buscar(self, ctx, *args):
-    
+
+    self.ctx = ctx
+
     if args == ():
       await ctx.channel.send('Debes escribir una palabra clave para que pueda buscar')
 
     else:
       message = str(' '.join(args).lower())
-      
+
       fields1 = [("Sesión", "1", True),
                   ("Ciclo", "Primer ciclo", True),
                   ("Fecha", "6 de junio de 2020", True),
@@ -104,9 +106,9 @@ class Buscar(Cog):
                   ("Fecha", "21 de noviembre de 2020", True),
                   ("Texto", "Tendencias filosóficas en el movimiento feminista", False),
                   ("Autora", "Anuradha Ghandy", False),
-                  ("Link del texto", " https://www.marxists.org/espanol/ghandy/2006/tendencias-filosoficas-movfem.htm", False), 
+                  ("Link del texto", " https://www.marxists.org/espanol/ghandy/2006/tendencias-filosoficas-movfem.htm", False),
                   ("Carpeta de Drive", "https://drive.google.com/drive/folders/1eRH_6fCKItYrx-d7QWvOSEtOyMZhU8x3?usp=sharing", False)]
-                
+
       fields15 = [("Sesión", "6", True),
                   ("Ciclo", "Segundo ciclo", True),
                   ("Fecha", "19 de diciembre de 2020", True),
@@ -152,13 +154,13 @@ class Buscar(Cog):
                 ("Fecha", "3 de abril de 2021", True),
                 ("Texto", "Auge y caída de Sendero Luminoso", False),
                 ("Autor", "Fabiola Escárgaza", False),
-                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1kG5ZSjSfPj5NUxEPsJ0MzwtLpIoanXmv?usp=sharing", False)]   
+                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1kG5ZSjSfPj5NUxEPsJ0MzwtLpIoanXmv?usp=sharing", False)]
 
       def make_embed(x):
         embed = Embed(colour=0xFF0000)
         for name, value, inline in x:
           embed.add_field(name=name, value=value, inline=inline)
-        embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
+        embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
         return embed
 
       embed1 = make_embed(fields1)
@@ -183,28 +185,28 @@ class Buscar(Cog):
       embed20 = make_embed(fields20)
       embed21 = make_embed(fields21)
 
-      actividades = {embed1: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marxismo leninismo maoísmo", "marx", "materialismo", "introduccion", "introducción"], 
-      embed2: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marx", "materialismo", "lenin", "introduccion", "introducción"], 
+      actividades = {embed1: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marxismo leninismo maoísmo", "marx", "materialismo", "introduccion", "introducción"],
+      embed2: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marx", "materialismo", "lenin", "introduccion", "introducción"],
       embed3: ["manifiesto comunista", "marx", "engels", "manifiesto", "burgueses", "proletarios", "marxismo", "comunismo"],
       embed4: ["chicago", "chicago boys", "documental", "chile", "dictadura", "dictadura militar", "golpe", "golpe de estado", "latinoamerica", "latinoamérica", "latam", "pinochet"],
       embed5: ["china", "maoismo", "mao", "maoísmo"],
       embed6: ["federici", "silvia federici", "feminismo"],
-      embed7: ["la sociedad del cansancio", "sociedad del cansancio", "byungchul han", "byungchul", "byung-chul", "byung-chul han"], 
+      embed7: ["la sociedad del cansancio", "sociedad del cansancio", "byungchul han", "byungchul", "byung-chul", "byung-chul han"],
       embed8: ["batalla de chile", "poder popular", "la batalla de chile", "chile", "documental", "latinoamerica", "latinoamérica", "latam"],
       embed9: ["batalla de chile", "golpe de estado", "el golpe de estado", "golpe", "dictadura", "la batalla de chile", "chile", "documental", "latinoamerica", "latinoamérica", "latam", "pinochet"],
-      embed10: ["filosofía", "filosofia", "filosofia politica", "filosofía política", "stalin", "materialismo", "marxismo", "marx", "materialismo dialéctico", "materialismo histórico"], 
+      embed10: ["filosofía", "filosofia", "filosofia politica", "filosofía política", "stalin", "materialismo", "marxismo", "marx", "materialismo dialéctico", "materialismo histórico"],
       embed11: ["economía", "economia", "economia politica", "economía política", "harnecker", "marta harnecker"],
       embed12: ["revolución", "rusia", "revolución rusa", "revolucion", "revolucion rusa", "lenin", "stalin", "trosky", "trostky"],
-      embed13: ["lenin", "leninismo", "enfermedad infantil", "izquierdismo"], 
+      embed13: ["lenin", "leninismo", "enfermedad infantil", "izquierdismo"],
       embed14: ["anuradha", "anuradha ghandy", "ghandy", "feminismo", "feminismo liberal", "radfem", "feminismo radical", "feminismo cultural", "feminismo anar"],
       embed15: ["curso básico", "maoísmo", "maoismo", "mao", "china", "revolución", "revolucion", "revolucion china", "revolución china"],
-      embed16: ["corea", "corea del sur", "corea del norte", "norcorea", "surcorea", "kim jongun", "guerra de corea", "guerra fría", "documental", "pyongyang"], 
-      embed17: ["mapuche", "argentina", "4 lonkos", "lonkos", "latinoamerica", "latinoamérica", "latam", "documental", "lonko"], 
+      embed16: ["corea", "corea del sur", "corea del norte", "norcorea", "surcorea", "kim jongun", "guerra de corea", "guerra fría", "documental", "pyongyang"],
+      embed17: ["mapuche", "argentina", "4 lonkos", "lonkos", "latinoamerica", "latinoamérica", "latam", "documental", "lonko"],
       embed18: ["mariategui", "mariátegui", "problema del indio", "problema de la tierra", "el problema del indio", "el problema de la tierra", "perú", "peru", "peruano", "latinoamerica", "latinoamérica", "latam"],
-      embed19: ["cuba", "mujeres", "feminismo", "revolucion cubana", "revolución cubana", "mujeres en revolución", "mujeres en revolucion", "documental", "latinoamerica", "latinoamérica", "latam"], 
+      embed19: ["cuba", "mujeres", "feminismo", "revolucion cubana", "revolución cubana", "mujeres en revolución", "mujeres en revolucion", "documental", "latinoamerica", "latinoamérica", "latam"],
       embed20: ["colombia", "latinoamerica", "latinoamérica", "latam", "anticomunismo", "comunismo", "guerrilla", "guerra fría"],
       embed21: ["perú", "peru", "sendero luminoso", "sendero", "latam", "latinoamérica", "latinoamerica", "guzmán"]}
-      
+
       counter = 0
 
       for key, value in actividades.items():
