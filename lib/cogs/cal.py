@@ -155,7 +155,7 @@ class Cal(Cog):
                     ("Fecha", "15 de mayo de 2021", True),
                     ("Texto", "Historia del MIR: 'Si quieren guerra, guerra tendrán...'", False),
                     ("Autor", "Cristián Pérez", False),
-                    ("Link del texto", "https://drive.google.com/file/d/1zsK72GjsqrcxK1ngJcm12QOYDqHyHj-3/view?usp=sharing", False)]
+                    ("Carpeta de Drive", "https://drive.google.com/drive/folders/118Y_LF0QNvnFdlSRxhtEaGo83y7jaiBm?usp=sharing", False)]
 
     def make_embed(x):
       embed = Embed(colour=0xFF0000)
@@ -184,7 +184,7 @@ class Cal(Cog):
     embed18 = make_embed(fields18)
     embed19 = make_embed(fields19)
     embed21 = make_embed(fields21)
-    ember22 = make_embed(fields22)
+    embed22 = make_embed(fields22)
 
     embeds = [embed22]
 

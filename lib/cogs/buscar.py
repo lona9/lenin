@@ -156,6 +156,13 @@ class Buscar(Cog):
                 ("Autor", "Fabiola Escárgaza", False),
                 ("Carpeta de Drive", "https://drive.google.com/drive/folders/1kG5ZSjSfPj5NUxEPsJ0MzwtLpIoanXmv?usp=sharing", False)]
 
+      fields22 = [("Sesión", "6", True),
+                  ("Ciclo", "Tercer ciclo", True),
+                  ("Fecha", "15 de mayo de 2021", True),
+                  ("Texto", "Historia del MIR: 'Si quieren guerra, guerra tendrán...'", False),
+                  ("Autor", "Cristián Pérez", False),
+                  ("Carpeta de Drive", "https://drive.google.com/drive/folders/118Y_LF0QNvnFdlSRxhtEaGo83y7jaiBm?usp=sharing", False)]
+
       def make_embed(x):
         embed = Embed(colour=0xFF0000)
         for name, value, inline in x:
@@ -184,6 +191,8 @@ class Buscar(Cog):
       embed19 = make_embed(fields19)
       embed20 = make_embed(fields20)
       embed21 = make_embed(fields21)
+      embed22 = make_embed(fields22)
+
 
       actividades = {embed1: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marxismo leninismo maoísmo", "marx", "materialismo", "introduccion", "introducción"],
       embed2: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marx", "materialismo", "lenin", "introduccion", "introducción"],
@@ -192,7 +201,7 @@ class Buscar(Cog):
       embed5: ["china", "maoismo", "mao", "maoísmo"],
       embed6: ["federici", "silvia federici", "feminismo"],
       embed7: ["la sociedad del cansancio", "sociedad del cansancio", "byungchul han", "byungchul", "byung-chul", "byung-chul han"],
-      embed8: ["batalla de chile", "poder popular", "la batalla de chile", "chile", "documental", "latinoamerica", "latinoamérica", "latam"],
+      embed8: ["batalla de chile", "poder popular", "la batalla de chile", "chile", "documental", "latinoamerica", "latinoamérica", "latam", "dictadura"],
       embed9: ["batalla de chile", "golpe de estado", "el golpe de estado", "golpe", "dictadura", "la batalla de chile", "chile", "documental", "latinoamerica", "latinoamérica", "latam", "pinochet"],
       embed10: ["filosofía", "filosofia", "filosofia politica", "filosofía política", "stalin", "materialismo", "marxismo", "marx", "materialismo dialéctico", "materialismo histórico"],
       embed11: ["economía", "economia", "economia politica", "economía política", "harnecker", "marta harnecker"],
@@ -205,7 +214,8 @@ class Buscar(Cog):
       embed18: ["mariategui", "mariátegui", "problema del indio", "problema de la tierra", "el problema del indio", "el problema de la tierra", "perú", "peru", "peruano", "latinoamerica", "latinoamérica", "latam"],
       embed19: ["cuba", "mujeres", "feminismo", "revolucion cubana", "revolución cubana", "mujeres en revolución", "mujeres en revolucion", "documental", "latinoamerica", "latinoamérica", "latam"],
       embed20: ["colombia", "latinoamerica", "latinoamérica", "latam", "anticomunismo", "comunismo", "guerrilla", "guerra fría"],
-      embed21: ["perú", "peru", "sendero luminoso", "sendero", "latam", "latinoamérica", "latinoamerica", "guzmán"]}
+      embed21: ["perú", "peru", "sendero luminoso", "sendero", "latam", "latinoamérica", "latinoamerica", "guzmán"],
+      embed22: ["chile", "dictadura", "mir", "latinoamérica", "latinoamerica"]}
 
       counter = 0
 

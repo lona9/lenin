@@ -55,7 +55,7 @@ class Ayuda(Cog):
       ("**__Sección Importantes__**", "<#716068304162258954>: Canal con las reglas del servidor\n<#716076222517608499>: Canal para anuncios importantes. NO SILENCIAR\n<#765349189692817408>: Canal con el resumen de las actividades ya realizadas y por realizar\n<#801276868027482164>: Canal para modificar tus roles\n<#801820643300474940>: Canal para votaciones del servidor", False),
       ("**__Sección Política__**", "<#716081691684241493>: Canal para discusión política en general\n<#716081838908506172>: Canal para subir recursos audiovisuales\n<#723974654548770898>: Canal donde se eligen futuras actividades mediante votación o discusión\n<#716081744390127717>: Canal para llevar a cabo discusiones durante las actividades)", False),
       ("**__Sección Off-topic__**", "<#775731002890518588>: Canal para hablar de cualquier tema\n<#775731090375311400>: Canal para hablar sobre juegos\n<#816493090449653760>: Canal para hablar sobre música\n<#716081709296255077>: Canal para utilizar el bot Chuu\n<#774806561465565194>: Canal para jugar EPIC RPG\n<#774730648774246431>: Canal para jugar Mudae\n<#832686629906415626>: Canal para enviar comandos de Engels\n<#731919940533223514>: Canal para comandos del reproductor de música", False),
-      # ("**__Sección Idiomas__**", "<#832444793229541466>: Canal para aprender chino mandarín\n<#832444851227983872>: Canal para aprender coreano\n<#832444904998830090>: Canal para aprender portugués\n<#832444934992560159>: Canal para aprender inglés", False)
+      ("**__Sección Idiomas__**", "<#832444793229541466>: Canal para aprender chino mandarín\n<#832444851227983872>: Canal para aprender coreano\n<#832444904998830090>: Canal para aprender portugués\n<#832444934992560159>: Canal para aprender inglés", False)
       ]
 
     for name, value, inline in fields:
@@ -72,12 +72,7 @@ class Ayuda(Cog):
 
     embed = Embed(title="Siguiente actividad", colour=0xFF0000)
 
-    fields = [("Sesión", "6", True),
-                ("Ciclo", "Tercer ciclo", True),
-                ("Fecha", "15 de mayo de 2021", True),
-                ("Texto", "Historia del MIR: 'Si quieren guerra, guerra tendrán...'", False),
-                ("Autor", "Cristián Pérez", False),
-                ("Link del texto", "https://drive.google.com/file/d/1zsK72GjsqrcxK1ngJcm12QOYDqHyHj-3/view?usp=sharing", False)]
+    fields = [("\u200B", "La siguiente actividad aún no está programada.", True),]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
@@ -93,12 +88,12 @@ class Ayuda(Cog):
 
     embed = Embed(title="Última actividad", colour=0xFF0000)
 
-    fields = [("Sesión", "5", True),
+    fields = [("Sesión", "6", True),
                 ("Ciclo", "Tercer ciclo", True),
-                ("Fecha", "3 de abril de 2021", True),
-                ("Texto", "Auge y caída de Sendero Luminoso", False),
-                ("Autor", "Fabiola Escárgaza", False),
-                ("Carpeta de Drive", "https://drive.google.com/drive/folders/1kG5ZSjSfPj5NUxEPsJ0MzwtLpIoanXmv?usp=sharing", False)]
+                ("Fecha", "15 de mayo de 2021", True),
+                ("Texto", "Historia del MIR: 'Si quieren guerra, guerra tendrán...'", False),
+                ("Autor", "Cristián Pérez", False),
+                ("Carpeta de Drive", "https://drive.google.com/drive/folders/118Y_LF0QNvnFdlSRxhtEaGo83y7jaiBm?usp=sharing", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
