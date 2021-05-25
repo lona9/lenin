@@ -12,8 +12,8 @@ class Notifications(Cog):
   @command(name="actividad", aliases=["act"])
   async def actividad(self, ctx):
     await ctx.message.delete()
-    await ctx.channel.send("Compañeres, les recordamos que hoy tendremos una nueva actividad, donde hablaremos sobre el Movimiento de Izquierda Revolucionaria (MIR) en Chile, con el texto **Historia del MIR: Si quieren guerra, guerra tendrán...** de Cristian Pérez. Les invitamos a participar en esta discusión de nuestro ciclo de Latinoamérica a las 16:00 (GMT -4, hora chilena).\n¡Les esperamos en unas horas!\n<@&801508398662942790>")
-    await ctx.channel.send(file=discord.File(os.path.join("/root/lenin/data/img/", "afichemir.png")))
+    await ctx.channel.send("Compañeres, les invitamos a la última actividad de nuestro ciclo de Latinoamérica, el cual finalizaremos con una discusión sobre el paro nacional en Colombia, este sábado 29 de mayo a las 18:00 (GMT -4, hora chilena).\n¡Les esperamos este sábado para culminar el ciclo!\n<@&801508398662942790>")
+    await ctx.channel.send(file=discord.File(os.path.join("/root/lenin/data/img/", "colombiatwt.png")))
 
   #DM NOTIFICACIONES
   @command()
@@ -27,8 +27,8 @@ class Notifications(Cog):
     for member in guild.members:
       if role_id in member.roles:
           try:
-              await member.send("Compañeres, les recordamos que hoy tendremos una nueva actividad, donde hablaremos sobre el Movimiento de Izquierda Revolucionaria (MIR) en Chile, con el texto **Historia del MIR: Si quieren guerra, guerra tendrán...** de Cristian Pérez. Les invitamos a participar en esta discusión de nuestro ciclo de Latinoamérica a las 16:00 (GMT -4, hora chilena).\n¡Les esperamos en unas horas!")
-              await member.send(file=discord.File(os.path.join("/root/lenin/data/img/", "afichemir.png")))
+              await member.send("Compañeres, les invitamos a la última actividad de nuestro ciclo de Latinoamérica, el cual finalizaremos con una discusión sobre el paro nacional en Colombia, este sábado 29 de mayo a las 18:00 (GMT -4, hora chilena).\n¡Les esperamos este sábado para culminar el ciclo!")
+              await member.send(file=discord.File(os.path.join("/root/lenin/data/img/", "colombiatwt.png")))
           except Forbidden:
               pass
 

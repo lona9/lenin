@@ -72,7 +72,10 @@ class Ayuda(Cog):
 
     embed = Embed(title="Siguiente actividad", colour=0xFF0000)
 
-    fields = [("\u200B", "La siguiente actividad aún no está programada.", True),]
+    fields = [("Sesión", "7", True),
+                ("Ciclo", "Tercer ciclo", True),
+                ("Fecha", "29 de mayo de 2021", True),
+                ("Una mirada al paro nacional colombiano", "Discusión de la situación actual colombiana", True)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
