@@ -9,11 +9,12 @@ class Notifications(Cog):
   def __init__(self, bot):
     self.bot = bot
 
+  ## MENSAJE SERVER
   @command(name="actividad", aliases=["act"])
   async def actividad(self, ctx):
     await ctx.message.delete()
-    await ctx.channel.send("Compañeres, les invitamos a la última actividad de nuestro ciclo de Latinoamérica, el cual finalizaremos con una discusión sobre el paro nacional en Colombia, este sábado 29 de mayo a las 18:00 (GMT -4, hora chilena).\n¡Les esperamos este sábado para culminar el ciclo!\n<@&801508398662942790>")
-    await ctx.channel.send(file=discord.File(os.path.join("/root/lenin/data/img/", "colombiatwt.png")))
+    await ctx.channel.send("Para celebrar un año desde que empezamos las actividades de este servidor, invitamos a todes a participar de una actividad este sábado 5 de junio a las 14:00 horas (GMT -4, hora chilena), donde discutiremos sobre **Kpop y marxismo**, en conmemoración a los dos grandes temas que engloban a OrbitBuró en Español.\n¡Les esperamos este sábado para la celebración!\n<@&801508398662942790>")
+    await ctx.channel.send(file=discord.File(os.path.join("/root/lenin/data/img/", "aniversario_orbitburo.png")))
 
   #DM NOTIFICACIONES
   @command()
@@ -27,8 +28,8 @@ class Notifications(Cog):
     for member in guild.members:
       if role_id in member.roles:
           try:
-              await member.send("Compañeres, les invitamos a la última actividad de nuestro ciclo de Latinoamérica, el cual finalizaremos con una discusión sobre el paro nacional en Colombia, este sábado 29 de mayo a las 18:00 (GMT -4, hora chilena).\n¡Les esperamos este sábado para culminar el ciclo!")
-              await member.send(file=discord.File(os.path.join("/root/lenin/data/img/", "colombiatwt.png")))
+              await member.send("Para celebrar un año desde que empezamos las actividades de este servidor, invitamos a todes a participar de una actividad este sábado 5 de junio a las 14:00 horas (GMT -4, hora chilena), donde discutiremos sobre **Kpop y marxismo**, en conmemoración a los dos grandes temas que engloban a OrbitBuró en Español.\n¡Les esperamos este sábado para la celebración!")
+              await member.send(file=discord.File(os.path.join("/root/lenin/data/img/", "aniversario_orbitburo.png")))
           except Forbidden:
               pass
 

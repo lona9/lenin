@@ -163,6 +163,12 @@ class Buscar(Cog):
                   ("Autor", "Cristián Pérez", False),
                   ("Carpeta de Drive", "https://drive.google.com/drive/folders/118Y_LF0QNvnFdlSRxhtEaGo83y7jaiBm?usp=sharing", False)]
 
+      fields23 = [("Sesión", "7", True),
+                  ("Ciclo", "Tercer ciclo", True),
+                  ("Fecha", "29 de mayo de 2021", True),
+                  ("Una mirada al paro nacional colombiano", "Discusión de la situación actual colombiana", True),
+                  ("Drive", "https://drive.google.com/drive/folders/1OqF9uXHjCITLrK7hqqn9A-_9kjYzToIb?usp=sharing", False)]
+
       def make_embed(x):
         embed = Embed(colour=0xFF0000)
         for name, value, inline in x:
@@ -215,7 +221,8 @@ class Buscar(Cog):
       embed19: ["cuba", "mujeres", "feminismo", "revolucion cubana", "revolución cubana", "mujeres en revolución", "mujeres en revolucion", "documental", "latinoamerica", "latinoamérica", "latam"],
       embed20: ["colombia", "latinoamerica", "latinoamérica", "latam", "anticomunismo", "comunismo", "guerrilla", "guerra fría"],
       embed21: ["perú", "peru", "sendero luminoso", "sendero", "latam", "latinoamérica", "latinoamerica", "guzmán"],
-      embed22: ["chile", "dictadura", "mir", "latinoamérica", "latinoamerica"]}
+      embed22: ["chile", "dictadura", "mir", "latinoamérica", "latinoamerica"],
+      embed23: ["colombia", "paro", "protesta", "latam", "latinoamerica", "latinoamérica", "esmad", "violencia policial"]}
 
       counter = 0
 

@@ -72,10 +72,10 @@ class Ayuda(Cog):
 
     embed = Embed(title="Siguiente actividad", colour=0xFF0000)
 
-    fields = [("Sesión", "7", True),
-                ("Ciclo", "Tercer ciclo", True),
-                ("Fecha", "29 de mayo de 2021", True),
-                ("Una mirada al paro nacional colombiano", "Discusión de la situación actual colombiana", True)]
+    fields = [("Sesión", "Actividad de aniversario", True),
+            ("Fecha", "5 de junio de 2021", True),
+            ("Título", "Kpop y marxismo", False),
+    ]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)
@@ -91,12 +91,11 @@ class Ayuda(Cog):
 
     embed = Embed(title="Última actividad", colour=0xFF0000)
 
-    fields = [("Sesión", "6", True),
+    fields = [("Sesión", "7", True),
                 ("Ciclo", "Tercer ciclo", True),
-                ("Fecha", "15 de mayo de 2021", True),
-                ("Texto", "Historia del MIR: 'Si quieren guerra, guerra tendrán...'", False),
-                ("Autor", "Cristián Pérez", False),
-                ("Carpeta de Drive", "https://drive.google.com/drive/folders/118Y_LF0QNvnFdlSRxhtEaGo83y7jaiBm?usp=sharing", False)]
+                ("Fecha", "29 de mayo de 2021", True),
+                ("Una mirada al paro nacional colombiano", "Discusión de la situación actual colombiana", True),
+                ("Drive", "https://drive.google.com/drive/folders/1OqF9uXHjCITLrK7hqqn9A-_9kjYzToIb?usp=sharing", False)]
 
     for name, value, inline in fields:
       embed.add_field(name=name, value=value, inline=inline)

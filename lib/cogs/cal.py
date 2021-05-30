@@ -157,10 +157,11 @@ class Cal(Cog):
                     ("Autor", "Cristián Pérez", False),
                     ("Carpeta de Drive", "https://drive.google.com/drive/folders/118Y_LF0QNvnFdlSRxhtEaGo83y7jaiBm?usp=sharing", False)]
 
-    fields22 = [("Sesión", "7", True),
+    fields23 = [("Sesión", "7", True),
                 ("Ciclo", "Tercer ciclo", True),
                 ("Fecha", "29 de mayo de 2021", True),
-                ("Una mirada al paro nacional colombiano", "Discusión de la situación actual colombiana", True)]
+                ("Una mirada al paro nacional colombiano", "Discusión de la situación actual colombiana", True),
+                ("Drive", "https://drive.google.com/drive/folders/1OqF9uXHjCITLrK7hqqn9A-_9kjYzToIb?usp=sharing", False)]
 
     def make_embed(x):
       embed = Embed(colour=0xFF0000)
