@@ -10,11 +10,13 @@ from discord.ext.commands import Bot as BotBase
 from discord.ext.commands import Context
 from discord.ext.commands import CommandNotFound
 
+from ..db import db
+
 PREFIX = '&'
 
 OWNER_IDS = [485054727755792410]
 
-COGS = ["utility", "reactions", "ayuda", "meta", "random", "triggers", "log", "buscar", "cal", "notifications", "info", "votaciones"]
+COGS = ["utility", "reactions", "ayuda", "meta", "random", "triggers", "log", "buscar", "cal", "notifications", "info", "votaciones", "reminders"]
 
 class Ready(object):
   def __init__(self):
@@ -40,8 +42,10 @@ class Bot(BotBase):
     intents = Intents.default()
     intents.members = True
 
+    db.autosave(self.scheduler)
+
     super().__init__(
-      command_prefix=PREFIX, 
+      command_prefix=PREFIX,
       owner_ids=OWNER_IDS,
       intents=Intents.all()
       )
@@ -51,7 +55,7 @@ class Bot(BotBase):
       self.load_extension(f"lib.cogs.{cog}")
       print(f" {cog} cog loaded")
 
-    print("setup complete") 
+    print("setup complete")
 
   def run(self, version):
       self.VERSION = version
@@ -71,7 +75,7 @@ class Bot(BotBase):
     if ctx.command is not None:
       if self.ready:
         await self.invoke(ctx)
-    
+
       else:
         await ctx.send("Aún no estoy listo para recibir comandos, por favor espera unos segundos.")
 
@@ -101,10 +105,12 @@ class Bot(BotBase):
 
   async def on_ready(self):
     if not self.ready:
-      
+
       # self.guild = self.get_guild(716064319938494545)
       self.leninlog = self.get_channel(829158432925024287)
       channel = self.leninlog
+
+      self.scheduler.start()
 
       await self.leninlog.send("Estoy listo, estoy listo, estoy listo, estoy listo!")
       self.ready = True
@@ -117,12 +123,9 @@ class Bot(BotBase):
       print("bot reconnected")
 
   async def on_message(self, message):
-      
+
     if not message.author.bot:
       await self.process_commands(message)
 
 
 bot = Bot()
-
-
-
