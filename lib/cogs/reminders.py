@@ -12,6 +12,7 @@ import pandas as pd
 class Reminders(Cog):
   def __init__(self, bot):
     self.bot = bot
+    self.check_reminder.start()
 
   @command(aliases=["r"])
   async def set_reminder(self, ctx, time, *args):
@@ -42,7 +43,6 @@ class Reminders(Cog):
 
           await ctx.send(f"Te recordaré de **{remindertext}** en **{time}**.")
 
-          self.check_reminder.start()
 
   @tasks.loop(seconds = 1)
   async def check_reminder(self):
