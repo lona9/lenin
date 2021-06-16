@@ -34,9 +34,6 @@ class Triggers(Cog):
       if 'anticomunismo' in msg.lower() or 'anticomunista' in msg.lower():
         await message.channel.send('<:yeojin2:716798849464795260>')
 
-      if 'blackpink' in msg.lower():
-        await message.channel.send('RS1 IS COMING')
-
       self.reprmusica = self.bot.get_channel(731919940533223514)
       self.secgen = self.bot.get_channel(716135897476628521)
       self.pruebot = self.bot.get_channel(800131110989463592)

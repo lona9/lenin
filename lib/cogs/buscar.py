@@ -173,7 +173,7 @@ class Buscar(Cog):
         embed = Embed(colour=0xFF0000)
         for name, value, inline in x:
           embed.add_field(name=name, value=value, inline=inline)
-        embed.set_author(name='lenin', icon_url=self.ctx.guild.icon_url)
+        embed.set_author(name='lenin', icon_url="https://cdn.discordapp.com/attachments/716135897476628521/822171692494618624/logodegradooo.png")
         return embed
 
       embed1 = make_embed(fields1)
