@@ -198,6 +198,7 @@ class Buscar(Cog):
       embed20 = make_embed(fields20)
       embed21 = make_embed(fields21)
       embed22 = make_embed(fields22)
+      embed23 = make_embed(fields23)
 
 
       actividades = {embed1: ["marxismo", "básico", "curso básico", "marxismo leninismo", "marxismo leninismo maoísmo", "marx", "materialismo", "introduccion", "introducción"],
